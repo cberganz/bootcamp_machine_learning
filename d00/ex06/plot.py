@@ -10,7 +10,7 @@ def predict_(x, theta):
 def mse_(y, y_hat):
     diff = y_hat - y
     differences_squared = diff ** 2
-    print(differences_squared.mean())
+    return differences_squared.mean()
 
 def plot_with_loss(x, y, theta):
     """Plot the data and prediction line from three non-empty numpy.ndarray.
@@ -25,6 +25,7 @@ def plot_with_loss(x, y, theta):
     """
     y_hat = predict_(x, theta)
     loss = mse_(y, y_hat)
+    plt.title(label="Cost: " + f"{loss:.6f}")
     plt.scatter(x, y, color="blue")
     plt.plot(x, y_hat, color="red")
     plt.show()
